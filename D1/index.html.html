@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            section {
+                width: 800px;
+                height: 100vh;
+                padding: 20px;
+                margin: auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .key {
+                background: #eee;
+                width: 50px;
+                height: 50px;
+                text-align: center;
+                line-height: 50px;
+                border: 1px solid #fa0;
+                transition: 0.5s;
+            }
+
+            .play {
+                border: 5px solid #fa0;
+                transform: scale(1.1);
+                transition: 0.5s;
+            }
+        </style>
+    </head>
+
+    <body>
+        <section>
+            <div class="key" data-key="KeyA">
+                <span>A</span>
+            </div>
+            <div class="key a" data-key="KeyS">
+                <span>S</span>
+            </div>
+            <div class="key" data-key="KeyD">
+                <span>D</span>
+            </div>
+            <div class="key" data-key="KeyF">
+                <span>F</span>
+            </div>
+            <div class="key" data-key="KeyG">
+                <span>G</span>
+            </div>
+            <div class="key" data-key="KeyH">
+                <span>H</span>
+            </div>
+            <div class="key" data-key="KeyJ">
+                <span>J</span>
+            </div>
+            <div class="key" data-key="KeyK">
+                <span>K</span>
+            </div>
+            <div class="key" data-key="KeyL">
+                <span>L</span>
+            </div>
+        </section>
+
+        <audio data-key="KeyA" src="sounds/clap.wav"></audio>
+        <audio data-key="KeyS" src="sounds/hihat.wav"></audio>
+        <audio data-key="KeyD" src="sounds/kick.wav"></audio>
+        <audio data-key="KeyF" src="sounds/openhat.wav"></audio>
+        <audio data-key="KeyG" src="sounds/boom.wav"></audio>
+        <audio data-key="KeyH" src="sounds/ride.wav"></audio>
+        <audio data-key="KeyJ" src="sounds/snare.wav"></audio>
+        <audio data-key="KeyK" src="sounds/tom.wav"></audio>
+        <audio data-key="KeyL" src="sounds/tink.wav"></audio>
+
+        <script>
+            const keys = document.querySelectorAll('.key')
+            window.addEventListener('keydown', playsound)
+            keys.forEach((key) => {
+                key.addEventListener('transitionend', removeTransition)
+            })
+
+            function playsound(e) {
+                const key = document.querySelector(`.key[data-key="${e.code}"]`)
+                const audio = document.querySelector(`audio[data-key="${e.code}"]`)
+                key.classList.add('play')
+                audio.currentTime = 0
+                audio.play()
+            }
+
+            function removeTransition(e) {
+                if (e.propertyName !== 'transform') return
+                e.target.classList.remove('play')
+            }
+        </script>
+    </body>
+</html>
