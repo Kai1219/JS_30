@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Day2</title>
+        <style>
+            section {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .clock {
+                width: 500px;
+                height: 500px;
+                border: 50px solid #188ef3;
+                border-radius: 50%;
+                position: relative;
+            }
+
+            .hand {
+                width: 200px;
+                height: 6px;
+                background: black;
+                transform: rotate(90deg);
+                transform-origin: 100%;
+                /*移動軸心(最右側)*/
+                position: absolute;
+                top: 50%;
+                right: 50%;
+                transition: 0.05s;
+                transition-timing-function: cubic-bezier(0, 2.65, 0.58, 1);
+            }
+
+            .second_hand {
+                background: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <section>
+            <div class="clock">
+                <div class="hand hour_hand"></div>
+                <div class="hand minute_hand"></div>
+                <div class="hand second_hand"></div>
+            </div>
+        </section>
+
+        <script>
+            const hour_hand = document.querySelector('.hour_hand')
+            const minute_hand = document.querySelector('.minute_hand')
+            const second_hand = document.querySelector('.second_hand')
+
+            function getTime() {
+                const now = new Date()
+
+                const seconds = now.getSeconds()
+                const secondsDegrees = (seconds / 60) * 360 + 90
+                second_hand.style.transform = `rotate(${secondsDegrees}deg)`
+
+                const minutes = now.getMinutes()
+                const minutesDegrees = (minutes / 60) * 360 + 90
+                minute_hand.style.transform = `rotate(${minutesDegrees}deg)`
+
+                const hours = now.getHours()
+                const hoursDegrees = (hours / 60) * 360 + 90
+                hour_hand.style.transform = `rotate(${hoursDegrees}deg)`
+            }
+
+            setInterval(getTime, 1000)
+
+            getTime()
+        </script>
+    </body>
+</html>
