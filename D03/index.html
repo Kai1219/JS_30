@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Day03</title>
+        <style>
+            :root {
+                --spacing: 10px;
+                --blur: 10px;
+                --base: #ffaa00;
+            }
+            img {
+                padding: var(--spacing);
+                filter: blur(var(--blur));
+                background: var(--base);
+            }
+
+            h1 span {
+                color: var(--base);
+            }
+
+            .wrap {
+                margin: auto;
+                text-align: center;
+            }
+            .controller {
+                margin-bottom: 30px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="wrap">
+            <h1>Update CSS Variables with <span>JS</span></h1>
+            <div class="content">
+                <div class="controller">
+                    <label for="spacing">Spacing:</label>
+                    <input type="range" name="spacing" id="spacing" min="0" max="100" data-unit="px" value="10" />
+                    <label for="blur">Blur:</label>
+                    <input type="range" name="blur" id="blur" min="0" max="10" data-unit="px" value="1" />
+                    <label for="Base Color">Base Color:</label>
+                    <input type="color" name="base" id="base" value="#ffaa00" />
+                </div>
+                <div class="img">
+                    <img src="https://picsum.photos/600/400" alt="" />
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const inputs = document.querySelectorAll('.controller input')
+
+            inputs.forEach((input) => {
+                input.addEventListener('change', imgChange)
+                input.addEventListener('mousemove', imgChange)
+            })
+
+            function imgChange() {
+                const suffix = this.dataset.unit || ''
+                document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
+            }
+        </script>
+    </body>
+</html>
