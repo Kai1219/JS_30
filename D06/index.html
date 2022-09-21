@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Day06</title>
+        <link rel="stylesheet" href="/D06/style.css" />
+    </head>
+    <body>
+        <form class="search-form">
+            <input type="text" class="search" placeholder="City or State" />
+            <ul class="suggestions">
+                <li>Filter for a city</li>
+                <li>or a state</li>
+            </ul>
+        </form>
+        <script>
+            const endpoint =
+                'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json'
+            let cities = []
+            const searchInput = document.querySelector('.search')
+            const suggestions = document.querySelector('.suggestions')
+
+            searchInput.addEventListener('keyup', rederMatches)
+            searchInput.addEventListener('change', rederMatches)
+
+            fetch(endpoint)
+                .then((response) => response.json())
+                .then((data) => cities.push(...data))
+
+            function findMatches(wordToMarch, cities) {
+                return cities.filter((place) => {
+                    //找出和關鍵字相符合的城市或景點
+                    const regex = new RegExp(wordToMarch, 'gi')
+                    return place.city.match(regex) || place.state.match(regex)
+                })
+            }
+
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+            }
+
+            function rederMatches() {
+                const matchArray = findMatches(this.value, cities)
+                const html = matchArray
+                    .map((place) => {
+                        //關鍵字
+                        const regex = new RegExp(this.value, 'gi')
+                        //將關鍵字highlight出來
+                        const cityName = place.city.replace(regex, `<span class="highlight">${this.value}</span>`)
+                        const stateName = place.state.replace(regex, `<span class="highlight">${this.value}</span>`)
+                        return `
+                        <li>
+                            <span class="name">${cityName}, ${stateName}</span>
+                            <span class="population">${numberWithCommas(place.population)}</span>
+                        </li>`
+                    })
+                    .join('')
+
+                suggestions.innerHTML = html
+            }
+        </script>
+    </body>
+</html>
