@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Day09</title>
+    </head>
+    <body>
+        <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+        <script>
+            const dogs = [
+                { name: 'Snickers', age: 2 },
+                { name: 'hugo', age: 8 },
+            ];
+
+            function makeGreen() {
+                const p = document.querySelector('p');
+                p.style.color = '#BADA55';
+                p.style.fontSize = '50px';
+            }
+
+            // Regular
+            console.log('hello');
+            // Interpolated
+            console.log('hello, %s 你好', '阿明');
+            // Styled
+            console.log('%c hello,你好', 'font-size:20px;background:red');
+            // warning!
+            console.warn('警告');
+            // Error :|
+            console.error('錯誤');
+            // Info
+            console.info('資訊資訊資訊資訊');
+            // Testing
+            console.assert(1 == 2, '結果為true就不會跳');
+            const p = document.querySelector('p');
+            console.assert(p.classList.contains('puch'), 'p的class沒有puch');
+            // clearing
+            console.clear();
+            // Viewing DOM Elements
+            console.log(p);
+            console.dir(p);
+            // Grouping together
+            dogs.forEach((dog) => {
+                console.log(`名字:${dog.name}`);
+                console.log(`年齡:${dog.age}`);
+                console.log(`${dog.name}已經相當於人類的${dog.age}歲`);
+            });
+
+            dogs.forEach((dog) => {
+                console.group(`${dog.name}`);
+                console.log(`名字:${dog.name}`);
+                console.log(`年齡:${dog.age}`);
+                console.log(`${dog.name}已經相當於人類的${dog.age}歲`);
+                console.groupEnd(`${dog.name}`);
+            });
+            // counting
+            console.count('A');
+            console.count('B');
+            console.count('B');
+            console.count('C');
+            console.count('A');
+            console.count('B');
+            console.count('C');
+            console.count('B');
+            console.count('C');
+            console.count('A');
+            console.count('B');
+            console.count('C');
+            console.count('A');
+            // timing
+            console.time('forEach');
+            dogs.forEach((dog) => {
+                console.groupCollapsed(`${dog.name}`);
+                console.log(`名字:${dog.name}`);
+                console.log(`年齡:${dog.age}`);
+                console.log(`${dog.name}已經相當於人類的${dog.age}歲`);
+                console.groupEnd(`${dog.name}`);
+            });
+            console.timeEnd('forEach');
+            //table
+            console.table(dogs);
+        </script>
+    </body>
+</html>
