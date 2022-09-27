@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Day12</title>
+        <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+    </head>
+    <body>
+        <h1>輸入unicorn看看</h1>
+
+        <script>
+            const pressed = [];
+            const secretCode = 'unicorn';
+            window.addEventListener('keydown', EasterEgg);
+
+            function EasterEgg(e) {
+                pressed.push(e.key);
+                pressed.splice(0, pressed.length - secretCode.length);
+
+                if (pressed.join('').includes(secretCode)) {
+                    console.log('Pass!');
+                    cornify_add();
+                }
+                console.log(pressed);
+            }
+        </script>
+    </body>
+</html>
