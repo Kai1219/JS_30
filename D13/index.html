@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Day13</title>
+        <style>
+            body {
+                box-sizing: border-box;
+                background: #ffc600;
+                font-family: 'helvetica neue';
+                font-size: 20px;
+                font-weight: 200;
+                margin: 0;
+            }
+
+            .wrap {
+                max-width: 700px;
+                margin: 100px auto;
+                background: white;
+                padding: 40px;
+                text-align: justify;
+            }
+
+            .slide-left {
+                float: left;
+                margin-right: 20px;
+            }
+
+            .slide-right {
+                float: right;
+                margin-left: 20px;
+            }
+
+            .slide-in {
+                width: 300px;
+                opacity: 0;
+                transition: all 0.5s;
+            }
+
+            .slide-left.slide-in {
+                transform: translateX(-30%) scale(0.95);
+            }
+
+            .slide-right.slide-in {
+                transform: translateX(30%) scale(0.95);
+            }
+
+            .slide-in.active {
+                opacity: 1;
+                transform: translateX(0%) scale(1);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <h1>往下滑</h1>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos sapiente autem eius suscipit maxime!
+                Natus adipisci, dicta deleniti blanditiis necessitatibus quo a corrupti nam maxime reiciendis
+                reprehenderit eius similique unde! Ipsam repellendus dolorem a temporibus facere dolores, consequatur,
+                neque molestiae ad perferendis delectus ipsum quam fugiat magni voluptatum soluta quis dolorum tempore
+                enim. Consequatur autem rerum excepturi at ea! Quos quae corrupti, numquam quo voluptas doloremque
+                dignissimos hic rem molestiae atque asperiores eum aspernatur neque adipisci quibusdam natus architecto.
+                Officia beatae vero iure temporibus quaerat, consequatur, sunt iusto asperiores adipisci saepe autem
+                pariatur. Fugiat id, sequi cupiditate amet magni ratione!
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos sapiente autem eius suscipit maxime!
+                Natus adipisci, dicta deleniti blanditiis necessitatibus quo a corrupti nam maxime reiciendis
+                reprehenderit eius similique unde! Ipsam repellendus dolorem a temporibus facere dolores, consequatur,
+                neque molestiae ad perferendis delectus ipsum quam fugiat magni voluptatum soluta quis dolorum tempore
+                enim. Consequatur autem rerum excepturi at ea! Quos quae corrupti, numquam quo voluptas doloremque
+                dignissimos hic rem molestiae atque asperiores eum aspernatur neque adipisci quibusdam natus architecto.
+                Officia beatae vero iure temporibus quaerat, consequatur, sunt iusto asperiores adipisci saepe autem
+                pariatur. Fugiat id, sequi cupiditate amet magni ratione!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum praesentium inventore mollitia minima qui
+                repellat a, corporis odit, nostrum cupiditate modi, quidem quaerat perferendis magnam consequuntur. Vel
+                molestiae soluta cum. Voluptates deleniti quisquam, maiores eaque expedita vel earum dignissimos nemo
+                incidunt corporis adipisci mollitia totam ab sapiente ea. Blanditiis doloribus atque non consequatur
+                similique asperiores accusantium placeat necessitatibus delectus perspiciatis veniam, saepe neque
+                cupiditate porro minus at commodi, iusto corrupti minima nemo expedita recusandae ab nostrum. Qui odio,
+                aliquid iusto ab molestiae maiores? Dolore velit, facere, dolorum aperiam reiciendis quidem debitis
+                dolorem fuga nobis ipsa sit! Assumenda voluptas consectetur laudantium.
+            </p>
+            <img class="slide-in slide-right" src="https://picsum.photos/id/11/800/800" alt="" />
+            <p>
+                Aspernatur sint, libero eligendi reprehenderit nesciunt fugiat veniam corrupti iure aliquam laboriosam
+                ex velit hic harum maiores laborum recusandae, sapiente unde aperiam numquam. Voluptatibus, enim totam
+                architecto facilis esse nam dicta maiores, tenetur hic laudantium aspernatur tempore dolores ex saepe
+                asperiores obcaecati tempora, quaerat aliquid praesentium molestias reiciendis adipisci animi eaque
+                accusamus? Beatae necessitatibus, consectetur laboriosam veniam, iste hic, reiciendis quis eius nulla
+                ratione omnis nisi. Amet sequi iste nobis ipsa, asperiores quibusdam maxime vitae doloremque dicta velit
+                nemo atque, optio tempora rerum eveniet, similique vel magni nihil dignissimos at? Ex labore iusto eos
+                soluta nihil optio, inventore temporibus veniam.
+            </p>
+            <img class="slide-in slide-left" src="https://picsum.photos/id/12/800/800" alt="" />
+            <p>
+                Sed ea dicta voluptates tempora maxime ratione aspernatur corporis doloribus ducimus? Molestiae
+                voluptatum ducimus totam at doloremque incidunt dolorem soluta error culpa veniam voluptatibus,
+                perferendis autem nobis omnis dolores. Repudiandae, temporibus dignissimos molestias tenetur porro
+                mollitia et, illo dolorum blanditiis sed recusandae. Quam est quod voluptate deleniti labore sunt
+                ratione ut reiciendis quibusdam dolorum? Ut corrupti, reprehenderit consequatur velit veritatis ducimus
+                provident enim nemo nesciunt perspiciatis minima tempore et dolor voluptatem nihil officiis similique
+                distinctio sequi consectetur? Minima, repudiandae distinctio aperiam illo sit voluptatem, fugit quos
+                eius nisi blanditiis quasi molestiae facilis omnis? Beatae sit sapiente, amet dolor ipsa ex?
+            </p>
+            <img class="slide-in slide-right" src="https://picsum.photos/id/13/800/800" alt="" />
+            <p>
+                Autem, quidem. Sint perferendis fugit vero esse aliquid, quos nostrum adipisci expedita aperiam,
+                dignissimos beatae repellat dolore ratione voluptas consequatur sunt officiis praesentium. Iste dolor,
+                ipsam velit ut optio enim. Dolores asperiores velit magnam reprehenderit perspiciatis repellendus nulla.
+                Vitae architecto blanditiis, nihil ipsum repellendus laboriosam molestias voluptates. Deleniti soluta,
+                modi commodi officiis voluptates nihil quisquam exercitationem sed, harum, deserunt id adipisci quam
+                explicabo laudantium assumenda totam placeat nemo debitis corrupti! Accusamus, ex doloremque! Incidunt
+                possimus, molestiae assumenda dolorum ducimus accusantium ipsa provident fugit facilis amet, aspernatur
+                voluptatem neque, porro rem omnis esse. Dolor, sapiente exercitationem dolores ratione voluptatum
+                cupiditate voluptate.
+            </p>
+            <img class="slide-in slide-left" src="https://picsum.photos/id/14/800/800" alt="" />
+            <p>
+                Ducimus consequatur repudiandae quia perferendis animi aut sed quibusdam aspernatur asperiores
+                dignissimos temporibus, ex dolorum vero veritatis quaerat. Suscipit eos quo deleniti ea expedita. Quia
+                suscipit accusantium, cum eos maxime perferendis hic in sunt ratione, consequuntur ducimus. Ut
+                doloremque laboriosam, alias similique veritatis delectus praesentium ex incidunt vero commodi,
+                excepturi facere assumenda quasi aliquam aperiam et voluptates expedita ullam odio temporibus est
+                suscipit blanditiis corrupti culpa? Perspiciatis odit corporis nisi eligendi non nostrum? Ipsum optio
+                alias quo ut est repudiandae nesciunt ullam eum, laborum aut, fugiat vero maxime. Exercitationem quos
+                praesentium sunt incidunt numquam consectetur vero quibusdam earum sapiente cupiditate.
+            </p>
+            <img class="slide-in slide-right" src="https://picsum.photos/id/15/800/800" alt="" />
+            <p>
+                Nisi quam, velit odio illo qui totam dolorem saepe, necessitatibus dolore, voluptatum adipisci laborum
+                natus provident voluptatem numquam incidunt neque explicabo maxime. Ab ad officia molestiae at tempora
+                mollitia officiis fuga obcaecati iure, a eius adipisci quibusdam doloribus hic quasi consequatur enim
+                eligendi ratione saepe ullam maxime dolores rem ipsum dolorum. Eveniet veritatis dolores aperiam nulla,
+                delectus doloribus incidunt! Magnam, doloribus, eligendi ipsam assumenda ducimus ad quae accusantium
+                quod eos culpa harum? Libero ea dolores at numquam hic? Sed accusamus magnam consequatur, minima quam,
+                iusto natus eligendi adipisci saepe labore enim reiciendis vel velit hic aut id nobis illum eos!
+            </p>
+            <img class="slide-in slide-left" src="https://picsum.photos/id/16/800/800" alt="" />
+            <p>
+                Nesciunt consectetur ducimus exercitationem ab accusamus facere officia, dolorum vitae quas iure nulla
+                praesentium numquam pariatur tempora, quo aspernatur asperiores excepturi facilis nisi id deserunt
+                reprehenderit animi! Harum tempore officiis alias, quisquam tenetur blanditiis unde, veniam excepturi
+                quis sunt id, recusandae ipsum repellat dolor! Quis nemo veniam deleniti, doloribus eum quasi delectus
+                officia. Perspiciatis expedita id unde! Quod error quasi fugit nobis labore recusandae, harum numquam
+                nisi, temporibus, quam quis blanditiis odio aliquid repellat. Voluptate explicabo amet, facere assumenda
+                architecto laboriosam provident. Cumque excepturi earum illo deleniti assumenda eligendi impedit harum,
+                eveniet quidem, nostrum nesciunt in a exercitationem tenetur eos.
+            </p>
+            <p>
+                Eius totam dignissimos labore voluptates, corrupti, earum non nostrum corporis sapiente similique quis
+                nemo, quasi quo delectus! Atque ea aut, minus rem asperiores beatae esse enim autem nam facere iste
+                aspernatur quisquam sapiente architecto voluptatem molestiae quaerat, saepe velit consequuntur quod
+                nihil reprehenderit dicta fugit. Velit, labore dolores excepturi culpa voluptatibus alias saepe.
+                Numquam, incidunt error. Quis doloribus, assumenda cum beatae ipsam ducimus, labore aliquam possimus
+                veritatis quas totam dolore laboriosam numquam laudantium deserunt, accusantium debitis asperiores
+                facere consequuntur alias velit. Ipsam adipisci rem quae sit aliquid quas distinctio saepe in illo
+                quidem et iure minus, neque laboriosam illum. Reprehenderit?
+            </p>
+        </div>
+
+        <script>
+            const images = document.querySelectorAll('.slide-in');
+
+            window.addEventListener('scroll', debounce(slideCheck, 30));
+
+            function debounce(func, wait = 20, immediate = true) {
+                var timeout;
+                return function () {
+                    var context = this,
+                        args = arguments;
+                    var later = function () {
+                        timeout = null;
+                        if (!immediate) func.apply(context, args);
+                    };
+                    var callNow = immediate && !timeout;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                    if (callNow) func.apply(context, args);
+                };
+            }
+
+            function slideCheck() {
+                images.forEach((image) => {
+                    //圖片一半高的位置
+                    const imgHalfAt = image.offsetTop + image.height / 2;
+                    const slideIn = window.scrollY + window.innerHeight >= imgHalfAt;
+                    //視窗捲到離開圖片
+                    const slideOut = window.scrollY >= image.offsetTop + image.height;
+
+                    if (slideIn && !slideOut) {
+                        image.classList.add('active');
+                    } else {
+                        image.classList.remove('active');
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
