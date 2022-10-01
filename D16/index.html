@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Day16</title>
+        <style>
+            body {
+                color: black;
+                font-family: sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            .hero {
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: black;
+            }
+
+            h1 {
+                text-shadow: 10px 10px 0 rgba(0, 0, 0, 1);
+                font-size: 100px;
+                border: 5px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hero">
+            <h1 contenteditable>🔥WOAH!</h1>
+        </div>
+
+        <script>
+            const hero = document.querySelector('.hero');
+            const text = document.querySelector('h1');
+            const walk = 300; //300px
+
+            hero.addEventListener('mousemove', shadow);
+
+            function shadow(e) {
+                const { offsetWidth: width, offsetHeight: height } = hero;
+                let { offsetX: x, offsetY: y } = e;
+
+                if (this !== e.target) {
+                    x = x + e.target.offsetLeft;
+                    y = y + e.target.offsetTop;
+                }
+
+                const XWalk = Math.round((x / width) * walk - walk / 2);
+                const YWalk = Math.round((y / height) * walk - walk / 2);
+
+                text.style.textShadow = `
+                ${XWalk}px ${YWalk}px 0 red,
+                ${XWalk * -1}px ${YWalk * -1}px 0 green,
+                ${YWalk}px ${XWalk}px 0 blue,
+                ${YWalk * -1}px ${XWalk * -1}px 0 pink`;
+            }
+        </script>
+    </body>
+</html>
