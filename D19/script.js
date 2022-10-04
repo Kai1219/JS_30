@@ -41,7 +41,7 @@ function paintToCanavas() {
         }
         //將ImageData數據繪製到畫布上
         ctx.putImageData(pixels, 0, 0);
-    }, 1600);
+    }, 16);
 }
 function takePhoto() {
     //拍照音效
