@@ -11,6 +11,10 @@
         <div class="photobooth">
             <div class="controls">
                 <button onClick="takePhoto()">Take Photo</button>
+                <button onClick="switchEffect('original')">無濾鏡</button>
+                <button onClick="switchEffect('red')">紅色濾鏡效果</button>
+                <button onClick="switchEffect('split')">顏色分離效果</button>
+                <button onClick="switchEffect('greenScreen')">綠幕效果(拖曳下方滑桿)</button>
                 <div class="rgb">
                     <label for="rmin">Red Min:</label>
                     <input type="range" min="0" max="255" name="rmin" />

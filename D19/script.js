@@ -7,6 +7,8 @@ const controllers = document.querySelectorAll('.rgb input');
 
 video.addEventListener('canplay', paintToCanavas);
 
+let Effect;
+
 function getVideo() {
     navigator.mediaDevices
         .getUserMedia({ video: true, audio: false })
@@ -23,7 +25,6 @@ function getVideo() {
 function paintToCanavas() {
     const width = video.videoWidth;
     const height = video.videoHeight;
-
     canvas.width = width;
     canvas.height = height;
 
@@ -32,16 +33,15 @@ function paintToCanavas() {
         ctx.drawImage(video, 0, 0, width, height);
         //取出canvas像素資料
         let pixels = ctx.getImageData(0, 0, width, height);
-        //紅色濾鏡效果
-        //pixels = redEffect(pixels);
-        //顏色分離效果
-        pixels = rgbSplit(pixels);
-        //加入綠幕效果
-        //pixels = greenScreen(pixels);
-        ctx.globalAlpha = 0.1;
+
+        //ctx.globalAlpha = 0.1;
+        //如果有按效果按鈕
+        if (Effect) {
+            pixels = Effect(pixels);
+        }
         //將ImageData數據繪製到畫布上
         ctx.putImageData(pixels, 0, 0);
-    }, 16);
+    }, 1600);
 }
 function takePhoto() {
     //拍照音效
@@ -58,6 +58,33 @@ function takePhoto() {
     link.innerHTML = ` <img src="${data}" alt="penguin">`;
     //strip為div，新增的超連結會放到第一個位置，也就是新增的元素會把舊的往後推
     strip.insertBefore(link, strip.firstChild);
+}
+
+function switchEffect(effect) {
+    switch (effect) {
+        case 'red': {
+            //紅色濾鏡效果
+            Effect = redEffect;
+            break;
+        }
+        case 'split': {
+            //顏色分離效果
+            Effect = rgbSplit;
+            break;
+        }
+        case 'greenScreen': {
+            //加入綠幕效果
+            Effect = greenScreen;
+            break;
+        }
+        case 'original': {
+            //無濾鏡
+            Effect = '';
+        }
+        default: {
+            break;
+        }
+    }
 }
 
 function redEffect(pixels) {
