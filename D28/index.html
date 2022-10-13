@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Day28</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <video
+                class="video flex"
+                width="765"
+                height="430"
+                src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4"
+                loop
+                controls
+            ></video>
+            <div class="speed">
+                <div class="speed-bar">1×</div>
+            </div>
+        </div>
+
+        <script>
+            const video = document.querySelector('.video');
+            const speed = document.querySelector('.speed');
+            const speedBar = document.querySelector('.speed-bar');
+
+            speed.addEventListener('mousemove', setRate);
+
+            function setRate(e) {
+                const y = e.pageY - this.offsetTop;
+                const pencent = y / this.offsetHeight;
+
+                const height = Math.round(pencent * 100) + '%';
+                speedBar.style.height = height;
+
+                const min = 0.4;
+                const max = 4;
+                const videoRate = (max - min) * pencent + min;
+                speedBar.textContent = `${videoRate.toFixed(2)}x`;
+                video.playbackRate = videoRate;
+            }
+        </script>
+    </body>
+</html>
