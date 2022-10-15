@@ -5,7 +5,7 @@ const cards = [
         workLink: 'D01/index.html',
         noteLink: 'https://ithelp.ithome.com.tw/articles/10291833',
         gitLink: 'https://github.com/Kai1219/JS_30/tree/gh-pages/D01',
-        imgUrl: 'Overview/img/D01.PNG',
+        imgUrl: 'img/D01.PNG',
     },
     {
         name: 'Day02',
@@ -13,7 +13,7 @@ const cards = [
         workLink: 'D02/index.html',
         noteLink: 'https://ithelp.ithome.com.tw/articles/10292502',
         gitLink: 'https://github.com/Kai1219/JS_30/tree/gh-pages/D02',
-        imgUrl: 'Overview/img/D02.PNG',
+        imgUrl: 'img/D02.PNG',
     },
     {
         name: 'Day03',
@@ -21,7 +21,7 @@ const cards = [
         workLink: 'D03/index.html',
         noteLink: 'https://ithelp.ithome.com.tw/articles/10292536',
         gitLink: 'https://github.com/Kai1219/JS_30/tree/gh-pages/D03',
-        imgUrl: 'Overview/img/D03.PNG',
+        imgUrl: 'img/D03.PNG',
     },
     {
         name: 'Day04',
@@ -29,7 +29,7 @@ const cards = [
         workLink: 'D04/index.html',
         noteLink: 'https://ithelp.ithome.com.tw/articles/10293222',
         gitLink: 'https://github.com/Kai1219/JS_30/tree/gh-pages/D04',
-        imgUrl: 'Overview/img/D04.PNG',
+        imgUrl: 'img/D04.PNG',
     },
     {
         name: 'Day05',
@@ -37,7 +37,7 @@ const cards = [
         workLink: 'D05/index.html',
         noteLink: 'https://ithelp.ithome.com.tw/articles/10293239',
         gitLink: 'https://github.com/Kai1219/JS_30/tree/gh-pages/D05',
-        imgUrl: 'Overview/img/D05.PNG',
+        imgUrl: 'img/D05.PNG',
     },
     {
         name: 'Day06',
@@ -45,7 +45,7 @@ const cards = [
         workLink: 'D06/index.html',
         noteLink: 'https://ithelp.ithome.com.tw/articles/10294504',
         gitLink: 'https://github.com/Kai1219/JS_30/tree/gh-pages/D06',
-        imgUrl: 'Overview/img/D06.PNG',
+        imgUrl: 'img/D06.PNG',
     },
     {
         name: 'Day07',
@@ -247,7 +247,7 @@ const display = cards
         (card) =>
             `<li class="day-li">
         <a class="day-link" href="${card.workLink}" target="_blank">
-            <img src="${card.imgUrl}" alt="" />
+            <img src="${card.imgUrl}" alt="${card.title}" />
             <span>查看效果>></span>
         </a>
         <div class="text">
