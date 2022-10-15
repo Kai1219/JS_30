@@ -34,7 +34,7 @@ function diplayEndTime(timeUp) {
     const end = new Date(timeUp);
     const hours = end.getHours();
     const mins = end.getMinutes();
-    const AmPmHours = hours < 12 ? `上午${hours}` : `下午${hours - 12}`;
+    const AmPmHours = hours <= 12 ? `上午${hours}` : `下午${hours - 12}`;
     endTime.textContent = `結束時間:${AmPmHours}:${mins < 10 ? '0' : ''}${mins}`;
 }
 
