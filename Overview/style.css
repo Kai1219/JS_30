@@ -1,0 +1,151 @@
+* {
+    text-decoration: none;
+    list-style: none;
+}
+body {
+    font-family: Microsoft JhengHei, serif, sans-serif;
+    background-image: linear-gradient(rgb(141, 160, 252), rgb(58, 31, 117));
+}
+.wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.header {
+    text-align: center;
+    margin: 50px 0;
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.header a {
+    padding: 0 10px;
+    margin: 0 10px;
+    color: #fff;
+    background-color: rgb(37, 31, 117);
+}
+
+.header a:hover {
+    background-color: rgb(18, 6, 84);
+}
+
+.day-ol {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.day-li {
+    margin: 10px;
+    box-sizing: border-box;
+    border: 1px solid #cac7c1;
+}
+
+.day-link {
+    display: inline-block;
+    width: 350px;
+    height: 200px;
+    position: relative;
+    overflow: clip;
+}
+
+.day-link::before {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+}
+
+.day-li img {
+    width: 100%;
+    height: 100%;
+    vertical-align: bottom;
+    object-fit: cover;
+}
+
+.day-li:hover .day-link::before {
+    background-color: #cccc;
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.day-li:hover img {
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+.day-li:hover .day-link span {
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.day-link span {
+    font-size: 1.2em;
+    text-align: center;
+    color: #333;
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    left: 0;
+    bottom: 0.6em;
+    z-index: 2;
+    opacity: 0;
+}
+
+.day-li .text {
+    padding: 5px 10px;
+    background-color: #fffe;
+    max-width: 350px;
+    min-height: 175px;
+    position: relative;
+}
+
+.text h3 {
+    font-size: 16px;
+    width: 300px;
+    margin: 5px 0;
+}
+
+.day-li .links {
+    text-align: end;
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+}
+.day-li .links a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 5px;
+}
+
+.day-li .links a:nth-child(1) {
+    background: url('/Overview/img/notes.png') no-repeat center / contain;
+}
+
+.day-li .links a:nth-child(2) {
+    background: url('/Overview/img/github.png') no-repeat center / contain;
+}
+
+.day-li .links a:nth-child(1):hover,
+.day-li .links a:nth-child(2):hover {
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+
+footer {
+    margin-top: 50px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+}
