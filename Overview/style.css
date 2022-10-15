@@ -38,7 +38,13 @@ body {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+@media screen and (min-width: 1200px) {
+    .day-ol {
+        justify-content: space-between;
+    }
 }
 .day-li {
     margin: 10px;
@@ -130,11 +136,11 @@ body {
 }
 
 .day-li .links a:nth-child(1) {
-    background: url('img/notes.png') no-repeat center / contain;
+    background: url('./img/notes.png') no-repeat center / contain;
 }
 
 .day-li .links a:nth-child(2) {
-    background: url('img/github.png') no-repeat center / contain;
+    background: url('./img/github.png') no-repeat center / contain;
 }
 
 .day-li .links a:nth-child(1):hover,
