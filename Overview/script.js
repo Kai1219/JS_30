@@ -93,7 +93,7 @@ const cards = [
         workLink: 'D12/index.html',
         noteLink: 'https://ithelp.ithome.com.tw/articles/10298947',
         gitLink: 'https://github.com/Kai1219/JS_30/tree/gh-pages/D12',
-        imgUrl: 'D12.PNG',
+        imgUrl: 'D12.png',
     },
     {
         name: 'Day13',
@@ -149,7 +149,7 @@ const cards = [
         workLink: 'D19/index.html',
         noteLink: 'https://ithelp.ithome.com.tw/articles/10302996',
         gitLink: 'https://github.com/Kai1219/JS_30/tree/gh-pages/D19',
-        imgUrl: 'D19.PNG',
+        imgUrl: 'D19.png',
     },
     {
         name: 'Day20',
@@ -157,7 +157,7 @@ const cards = [
         workLink: 'D20/index.html',
         noteLink: 'https://ithelp.ithome.com.tw/articles/10304156',
         gitLink: 'https://github.com/Kai1219/JS_30/tree/gh-pages/D20',
-        imgUrl: 'D20.PNG',
+        imgUrl: 'D20.png',
     },
     {
         name: 'Day21',

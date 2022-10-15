@@ -136,11 +136,11 @@ body {
 }
 
 .day-li .links a:nth-child(1) {
-    background: url('./img/notes.png') no-repeat center / contain;
+    background: url('img/notes.png') no-repeat center / contain;
 }
 
 .day-li .links a:nth-child(2) {
-    background: url('./img/github.png') no-repeat center / contain;
+    background: url('img/github.png') no-repeat center / contain;
 }
 
 .day-li .links a:nth-child(1):hover,
