@@ -4,16 +4,26 @@
 }
 body {
     font-family: Microsoft JhengHei, serif, sans-serif;
-    background-image: linear-gradient(rgb(141, 160, 252), rgb(58, 31, 117));
+    background: linear-gradient(#1d1b42, #64353e);
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    width: 100%;
+}
+.banner-pic {
+    max-width: 1200px;
+    margin: auto;
+}
+.banner img {
+    width: 100%;
+    vertical-align: middle;
 }
 .wrap {
     width: 100%;
     max-width: 1200px;
     margin: auto;
-}
-
-.banner img {
-    width: 100%;
 }
 
 .header {
@@ -27,11 +37,11 @@ body {
     padding: 0 10px;
     margin: 0 10px;
     color: #fff;
-    background-color: rgb(37, 31, 117);
+    background-color: #64353e;
 }
 
 .header a:hover {
-    background-color: rgb(18, 6, 84);
+    background-color: #1d1b42;
 }
 
 .day-ol {
@@ -50,6 +60,8 @@ body {
     margin: 10px;
     box-sizing: border-box;
     border: 1px solid #cac7c1;
+    display: flex;
+    flex-direction: column;
 }
 
 .day-link {
@@ -58,6 +70,7 @@ body {
     height: 200px;
     position: relative;
     overflow: clip;
+    border-bottom: 1px solid #cac7c1;
 }
 
 .day-link::before {
@@ -110,10 +123,11 @@ body {
 
 .day-li .text {
     padding: 5px 10px;
-    background-color: #fffe;
+    background-color: #fff;
     max-width: 350px;
-    min-height: 175px;
-    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .text h3 {
@@ -123,10 +137,8 @@ body {
 }
 
 .day-li .links {
+    margin-top: auto;
     text-align: end;
-    position: absolute;
-    right: 10px;
-    bottom: 20px;
 }
 .day-li .links a {
     display: inline-block;
@@ -150,7 +162,7 @@ body {
 }
 
 footer {
-    margin-top: 50px;
+    margin-top: 25px;
     height: 50px;
     text-align: center;
     color: #fff;

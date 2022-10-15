@@ -246,21 +246,21 @@ const display = cards
     .map(
         (card) =>
             `<li class="day-li">
-        <a class="day-link" href="${card.workLink}" target="_blank">
-            <img src="Overview/img/${card.imgUrl}" alt="${card.title}" />
-            <span>查看效果>></span>
-        </a>
-        <div class="text">
-            <div class="title">
-                <h2>${card.name}</h2>
-                <h3>${card.title}</h3>
+            <a class="day-link" href="${card.workLink}" target="_blank">
+                <img src="Overview/img/${card.imgUrl}" alt="${card.title}" />
+                <span>查看效果>></span>
+            </a>
+            <div class="text">
+                <div class="title">
+                    <h2>${card.name}</h2>
+                    <h3>${card.title}</h3>
+                </div>
+                <div class="links">
+                    <a href="${card.noteLink}" target="_blank"></a>
+                    <a href="${card.gitLink}" target="_blank"></a>
+                </div>
             </div>
-            <div class="links">
-                <a href="${card.noteLink}" target="_blank"></a>
-                <a href="${card.gitLink}" target="_blank"></a>
-            </div>
-        </div>
-    </li>`
+        </li>`
     )
     .join('');
 
