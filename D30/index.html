@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Day30</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h2>用滑鼠點擊地鼠!</h2>
+        <p>分數:<span class="score">0</span>剩餘時間:<span class="timeLeft">0</span></p>
+
+        <div class="game">
+            <div class="hole hole1">
+                <div class="mole"></div>
+            </div>
+            <div class="hole hole2">
+                <div class="mole"></div>
+            </div>
+            <div class="hole hole3">
+                <div class="mole"></div>
+            </div>
+            <div class="hole hole4">
+                <div class="mole"></div>
+            </div>
+            <div class="hole hole5">
+                <div class="mole"></div>
+            </div>
+            <div class="hole hole6">
+                <div class="mole"></div>
+            </div>
+        </div>
+        <div class="modal">
+            <div class="modal-content">
+                <h1>打地鼠!</h1>
+                <p>試著在10秒內，用滑鼠點擊地鼠!</p>
+                <button onClick="startGame()">Start!</button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
